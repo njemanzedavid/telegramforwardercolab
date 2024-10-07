@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Telegram Forwarder - Start Forwarding</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Start Forwarding Messages</h2>
+<form method="POST" action="/start_forwarding?phone_number={{ config['phone_number'] }}">
+    Source Chats (comma separated): <input type="text" name="source_chats" required><br>
+    Destinations (comma separated): <input type="text" name="destinations" required><br>
+    Keywords (comma separated): <input type="text" name="keywords"><br>
+    Keyword Timer (e.g., '10 minutes', '2 months'): <input type="text" name="keyword_timer"><br>
+    <input type="checkbox" name="solana_enabled"> Enable Solana Forwarding<br>
+    Solana Source Chats (comma separated): <input type="text" name="solana_source_chats"><br>
+    Solana Destinations (comma separated): <input type="text" name="solana_destinations"><br>
+    Solana Timer: <input type="text" name="solana_timer"><br>
+    <input type="checkbox" name="eth_enabled"> Enable Ethereum Forwarding<br>
+    Ethereum Source Chats (comma separated): <input type="text" name="eth_source_chats"><br>
+    Ethereum Destinations (comma separated): <input type="text" name="eth_destinations"><br>
+    Ethereum Timer: <input type="text" name="eth_timer"><br>
+    <input type="checkbox" name="cashtag_enabled"> Enable Cashtag Forwarding<br>
+    Cashtag Source Chats (comma separated): <input type="text" name="cashtag_source_chats"><br>
+    Cashtag Destinations (comma separated): <input type="text" name="cashtag_destinations"><br>
+    Cashtag Timer: <input type="text" name="cashtag_timer"><br>
+    <button type="submit">Start Forwarding</button>
+</form>
+<a href="{{ url_for('menu') }}">Return to Main Menu</a>
+
+</body>
+</html>
